@@ -212,22 +212,22 @@ TapPayment.LaunchBillingFlow(skuDetailsList[buyPosition], "roleId001", "1e59c66f
 
 ## 3 Server端 Webhook设置
 ### 3.1 Webhook说明
-Webhook用于支付到账后TapPayment通知游戏方发放商品,游戏方需要在游戏服务器上设置Webhook，并在DC后台上配置好Webhook的URL。游戏收到Webhook通知后，即可认为支付成功到账，可以发放商品，同时返回200状态码，如果返回其它的状态的话，则认为支付失败，TapPayment将会重复调用Webhook最多10次。
+Webhook用于支付到账后TapPayment通知游戏方发放商品,游戏方需要在游戏服务器上设置Webhook API，HTTP方法为POST，并在DC后台上配置好Webhook的URL。游戏收到Webhook通知后，即可认为支付成功到账，可以发放商品，同时返回200状态码，如果返回其它的状态的话，则认为支付失败，TapPayment将会重复调用Webhook最多10次。
 
 ### 3.2 Webhook内容
 Webhook的内容格式为json，具体格式如下：
 ```json
 {
-    "clientId": "", // 游戏方的clientId
-    "orderId": "", // create order时返回的orderId
-    "serverId": "", // create order时传入的serverId
-    "roleId": "", // create order时传入的roleId
-    "userId": "", // create order时传入的userId
-    "goodOpenId": "", // create order时传入的商品openId
-    "extra": "", // create order时传入的额外信息
-    "timestamp":"", // 时间戳
-    "paymentChannelName", "" // 支付渠道名称
-    "signature": "signature" // 签名
+    "clientId": "游戏方的clientId",
+    "orderId": "create order时返回的orderId",
+    "serverId": "create order时传入的serverId",
+    "roleId": "create order时传入的roleId",
+    "userId": "create order时传入的userId",
+    "goodOpenId": "create order时传入的商品openId",
+    "extra": "create order时传入的额外信息",
+    "timestamp":"post webhook的时间戳",
+    "paymentChannelName", "支付渠道名称",
+    "signature": "签名"
 }
 ```
 游戏方成功处理Webhook调用后，需要给TapPayment返回200状态码，并且返回结果为"success"字符串，否则TapPayment将认为调用失败而重试。
