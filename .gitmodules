@@ -1,0 +1,3 @@
+[submodule "TapPayment-Unity"]
+	path = TapPayment-Unity
+	url = git@github.com:taptap/TapPayment-Unity.git

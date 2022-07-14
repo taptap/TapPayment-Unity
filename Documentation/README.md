@@ -49,7 +49,7 @@ var config = new TapConfig.Builder()
     .TapPaymentConfig(
         "CN"                   // 地区暂时只支持「中国地区」 
         , "zh_CN"              // 语言暂时只支持中文
-        , "https://${domain}" // 微信商户申请H5时提交的授权域名，详见 https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_4 里 Referer 设置相关部分 
+        , "https://tds-payment.tapapis.cn" // 微信商户申请H5时提交的授权域名，详见 https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_4 里 Referer 设置相关部分 
     )
     .ConfigBuilder();
 TapBootstrap.Init(config);
