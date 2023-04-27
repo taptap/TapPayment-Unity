@@ -1,0 +1,20 @@
+{
+    "name": "TapTap.Payment.Mobile.Runtime",
+    "references": [
+        "GUID:5672c01f26a404fb7b6ff575cb06f54b",
+        "GUID:dbf1f72222b5446c6a41cdd259c2dbaa",
+        "GUID:c6203433e1c884f73aa9ad27909458a5"
+    ],
+    "includePlatforms": [
+        "Android",
+        "iOS"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
